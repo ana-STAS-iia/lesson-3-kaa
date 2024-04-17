@@ -6,11 +6,16 @@
 Note: оценки всегда будут уникальными (поэтому никаких повторяющихся значений) */
 
 function myLanguages(results) {
+  let myLanguages = [];
 
+  let entries = Object.entries(results);
+
+  entries.sort((a, b) => b[1] - a[1]);
+
+  myLanguages = entries.filter(([language, score]) => score >= 60).map(([language, score]) => language);
+
+  return myLanguages;
 }
-
-
-
 
 
 
